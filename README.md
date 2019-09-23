@@ -11,32 +11,41 @@ Norit peržiūrėti specialisto dalį, reikia nueiti į signin.php failą, ten s
 
 **Užduočių įgyvendinimas**
 
-- [ ] Yra failas duomenų bazės struktūrai
-Buvo įgyvendinta pridedant SQL duomenų bazės dump'ą, jame matosi visi primary, foreign key, bei duomenų bazės lentelės bei jų laukai.
+> Yra failas duomenų bazės struktūrai
 
-- [ ] Yra failas prisijungimui prie duomenų bazės ( config file )
-Buvo įgyvendinta Database.php klasės faile, kadangi buvo naudota localhost duomenų bazė, tai jungiantis reikia įvesti savo lokalios bazės username, password bei duomenų bazės schemos pavadinimą.
+  Buvo įgyvendinta pridedant SQL duomenų bazės dump'ą, jame matosi visi primary, foreign key, bei duomenų bazės lentelės bei jų laukai.
 
-- [ ] Panaudotas POST HTTP metodas
-Buvo įgyvendinta kuriant naują registraciją.
+> Yra failas prisijungimui prie duomenų bazės ( config file )
 
-- [ ] Panaudotas GET HTTP metodas
-Buvo įgyvendinta atvaizduojant koki žmonės užsiregistravo pas specialistą.
+  Buvo įgyvendinta Database.php klasės faile, kadangi buvo naudota localhost duomenų bazė, tai jungiantis reikia įvesti savo lokalios bazės username, password bei duomenų bazės schemos pavadinimą.
 
-- [ ] Įrašoma į duomenų bazę
-Buvo įgyvendinta kartu su POST metodu įrašant naujas registracijas į duomenų bazę.
+> Panaudotas POST HTTP metodas
 
-- [ ] Skaitoma iš duomenų bazės (su rikiavimu)
-Buvo įgyvendinta atvaizduojant švieslentėje, bei specialisto puslapyję esančius įrašus rikiuojant pagal jų registracijos laiką.
+  Buvo įgyvendinta kuriant naują registraciją.
 
-- [ ] Ištrinimas iš duomenų bazės (WHERE sąlyga) 
-Buvo įgyvendinta kai specialistas paspausdavo mygtuką, kad aptarnavo klientą.
+> Panaudotas GET HTTP metodas
 
-- [ ] Keli būdai atvaizduoti tuos pačius duomenis (LIMIT sąlyga) 
-Buvo įgyvendinta atvaizduojant įrašus švieslentėje, limituojant įrašų kiekį iki naujausių 10 (kas galbūt nėra reikalinga)
+  Buvo įgyvendinta atvaizduojant koki žmonės užsiregistravo pas specialistą.
 
-- [ ] Panaudota sudėtingesnė SQL struktūra (kelios lentelės susietos ryšiais (1:daug))
-Buvo įgyvendinta susiejant lenteles client bei specialist su registration. Lentelėje registration yra foreign key į lenteles client bei specialist.
+> Įrašoma į duomenų bazę
+
+  Buvo įgyvendinta kartu su POST metodu įrašant naujas registracijas į duomenų bazę.
+
+> Skaitoma iš duomenų bazės (su rikiavimu)
+
+  Buvo įgyvendinta atvaizduojant švieslentėje, bei specialisto puslapyję esančius įrašus rikiuojant pagal jų registracijos laiką.
+
+> Ištrinimas iš duomenų bazės (WHERE sąlyga) 
+
+  Buvo įgyvendinta kai specialistas paspausdavo mygtuką, kad aptarnavo klientą.
+
+> Keli būdai atvaizduoti tuos pačius duomenis (LIMIT sąlyga) 
+
+  Buvo įgyvendinta atvaizduojant įrašus švieslentėje, limituojant įrašų kiekį iki naujausių 10 (kas galbūt nėra reikalinga)
+
+> Panaudota sudėtingesnė SQL struktūra (kelios lentelės susietos ryšiais (1:daug))
+
+  Buvo įgyvendinta susiejant lenteles client bei specialist su registration. Lentelėje registration yra foreign key į lenteles client bei specialist.
 
 Rekomenduojamas užduoties įgyvendimas ( Level 2 )
 ===============================
@@ -47,23 +56,30 @@ Projektas buvo papildytas keliais failais. CompletionTime klase, kurioje aprašo
 
 **Užduočių įgyvendinimas**
 
-- [ ] Specialistui aptarnavus klientą, vietoj duomenų ištrynimo, pažymima, kad klientas aptarnautas
-Buvo įgyvendinta duomenų bazės lentelėje pridėjus lauką "is_completed" su galimomis reikšmėmis 0 ir 1, kur 1 žymi, kad klientas buvo aptarnautas. Specialistas spaudžiant mygtuką baigti, vietoj ištrinimo lauko iš registration lentelės dabar tik atnaujina is_completed reikšmę į 1.
+> Specialistui aptarnavus klientą, vietoj duomenų ištrynimo, pažymima, kad klientas aptarnautas
 
-- [ ] Švieslentėje rodomi tik neaptarnauti klientai
-Buvo įgyvendinta atnaujinus užklausą, kad trauktų visas registracijas kurių statusas yra 0 arba neaptarnauti.
+  Buvo įgyvendinta duomenų bazės lentelėje pridėjus lauką "is_completed" su galimomis reikšmėmis 0 ir 1, kur 1 žymi, kad klientas buvo aptarnautas. Specialistas spaudžiant mygtuką baigti, vietoj ištrinimo lauko iš registration lentelės dabar tik atnaujina is_completed reikšmę į 1.
 
-- [ ] Yra funkcija ar SQL užklausa apskaičiuoti, kiek truko apsilankymas (galima apsilankymų laikus saugoti atskiroje lentelėje)
-Buvo įgyvendinta paimant skirtumą timestampo registracijos ir kada buvo aptarnautas klientas ir įrašant į duombazę kaip naują įrašą priskiriant registracijos id.
+> Švieslentėje rodomi tik neaptarnauti klientai
 
-- [ ] Švieslentėje rodoma, kiek laiko liko klientui laukti (vidurkis pagal laukimo laiką per specialistą)
-Buvo įgyvedinta pradžiai apskaičiuojant kelintas eilėje klientas yra pas specialistą, tada padauginant iš specialisto vidutinio aptarnavimo laiko.
+  Buvo įgyvendinta atnaujinus užklausą, kad trauktų visas registracijas kurių statusas yra 0 arba neaptarnauti.
 
-- [ ] Lankytojas gavęs nuorodą (ar įvedęs savo numerį kažkokioje formoje) mato tik jam skirtą laukti laiką
-Buvo įgyvendinta sukuriant naują php failą view.php. Įkėlimo į duombazę metu yra sugeneruojamas hash string'as kuris yra įdedamas į duombazę ir poto naudojamas kaip argumentas view.php faile, kad rodyti žmogui jo vidutinį laukimo laiką. Tada žmogus kai registruojasi sėkmingos registracijos metu jis yra nukeliamas į view.php failą su jam sugeneruotu url kaip argumentu ir ten jis gali išsisaugoti nuorodą tolimensniam vartojimui arba grįžti į pagrindinį puslapį.
+> Yra funkcija ar SQL užklausa apskaičiuoti, kiek truko apsilankymas (galima apsilankymų laikus saugoti atskiroje lentelėje)
+  
+  Buvo įgyvendinta paimant skirtumą timestampo registracijos ir kada buvo aptarnautas klientas ir įrašant į duombazę kaip naują įrašą priskiriant registracijos id.
 
-- [ ] Lankytojo puslapyje numatomas laikas patikslinamas kas 5s (JavaScript arba HTML meta)
-Buvo įgyvendinta pridedant html meta tag'ą.
+> Švieslentėje rodoma, kiek laiko liko klientui laukti (vidurkis pagal laukimo laiką per specialistą)
 
-- [ ] Užregistravus naują klientą turi išvesti Užregistruota sėkmingai arba Įvyko klaida, kreipkitės telefonu
-Sėkmingai užsiregistravus žmogus yra perkeliamas į view.php failą kuriame yra išvesta žinutė pranešanti, kad sėkmingai užsiregistravo, kitu atveju yra perkeliamas į 404.php kuriame išvedamas pranešimas "Įvyko klaida, kreipkitės telefonu"
+  Buvo įgyvedinta pradžiai apskaičiuojant kelintas eilėje klientas yra pas specialistą, tada padauginant iš specialisto vidutinio aptarnavimo laiko.
+
+> Lankytojas gavęs nuorodą (ar įvedęs savo numerį kažkokioje formoje) mato tik jam skirtą laukti laiką
+  
+  Buvo įgyvendinta sukuriant naują php failą view.php. Įkėlimo į duombazę metu yra sugeneruojamas hash string'as kuris yra įdedamas į duombazę ir poto naudojamas kaip argumentas view.php faile, kad rodyti žmogui jo vidutinį laukimo laiką. Tada žmogus kai registruojasi sėkmingos registracijos metu jis yra nukeliamas į view.php failą su jam sugeneruotu url kaip argumentu ir ten jis gali išsisaugoti nuorodą tolimensniam vartojimui arba grįžti į pagrindinį puslapį.
+
+> Lankytojo puslapyje numatomas laikas patikslinamas kas 5s (JavaScript arba HTML meta)
+
+  Buvo įgyvendinta pridedant html meta tag'ą.
+
+> Užregistravus naują klientą turi išvesti Užregistruota sėkmingai arba Įvyko klaida, kreipkitės telefonu
+
+  Sėkmingai užsiregistravus žmogus yra perkeliamas į view.php failą kuriame yra išvesta žinutė pranešanti, kad sėkmingai užsiregistravo, kitu atveju yra perkeliamas į 404.php kuriame išvedamas pranešimas "Įvyko klaida, kreipkitės telefonu"
